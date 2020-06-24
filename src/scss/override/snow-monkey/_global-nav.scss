@@ -1,0 +1,67 @@
+// ==========================================================================
+// Snow Monkey テーマのグローバルナビゲーションを上書き
+// ==========================================================================
+.p-global-nav{
+	.c-navbar__item:not(:root){
+		//通常
+		> a{
+			padding: 0.9rem;
+			font-size: 0.75rem;
+			&:hover{
+				opacity: 0.5;
+				color: #fff;
+			}
+		}
+		//アクティブ時
+		&[data-active-menu="true"] > a{
+			color:#fff;
+			> span{
+				position: relative;
+				&::after{
+					content: "";
+					position: absolute;
+					right: 0;
+					bottom: -0.3em;
+					left: 0;
+					display: block;
+					width: 1rem;
+					height: 1px;
+					margin: auto;
+					background-color: rgba(255,255,255,0.75);
+				}
+			}
+		}
+		//SNSアイコン
+		&.is-type-sns{
+			align-self: center;
+			> a{
+				min-width: 1.25rem;
+				padding: 0.25rem;
+				font-size: 1.3rem;
+			}
+			+ .is-type-sns{
+				margin-left: 0.35em;
+			}
+			//SNSアイコンと通常のメニューの間に予約
+			&.--fb{
+				margin-left: 1em;
+			}
+		}
+	}
+}
+
+//固定表示時
+.p-drop-nav{
+	background-color: map-get($colors-map, accent-color1);
+	.p-global-nav{
+		.is-type-sns{
+			display: none;
+		}
+		.c-navbar__item:not(:root){
+			color: #fff;
+			>a{
+				color: #fff;
+			}
+		}
+	}
+}

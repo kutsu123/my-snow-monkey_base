@@ -1,0 +1,13 @@
+// ==========================================================================
+// Snow Monkey テーマのページヘッダの上書き
+// ==========================================================================
+.c-page-header:not(:root){
+	min-height: 200px;
+	background-color: map-get($colors-map, accent-color1);
+}
+
+.c-page-header__bgimage{
+	> img{
+		opacity: 0.15;
+	}
+}

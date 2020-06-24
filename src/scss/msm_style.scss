@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+// ==========================================================================
+// Foundation
+// ==========================================================================
+//variable
+@import 'foundation/variable';
+
+// Mixins
+@import 'foundation/mixin/fontsize';
+@import 'foundation/mixin/mediaqueries';
+@import 'foundation/mixin/mediaqueries_only';
+
+
+// ==========================================================================
+// override
+// ==========================================================================
+
+// Snow Monkey Theme
+// ------------------------------------
+@import 'override/snow-monkey/header';
+@import 'override/snow-monkey/global-nav';
+@import 'override/snow-monkey/drawer-sub-nav';
+@import 'override/snow-monkey/humberger-btn';
+@import 'override/snow-monkey/page-header';
+@import 'override/snow-monkey/footer';
+@import 'override/snow-monkey/entries';
+@import 'override/snow-monkey/entry-header';
+
+// Gutenberg（Core Block）
+// ------------------------------------
+@import 'override/gutenberg/categories'; //カテゴリブロック
+
+
+// ==========================================================================
+// Custom Component
+// ==========================================================================
+.p-entry__categories{
+	margin-top: 3.5em;
+}
+
+
+
+
+// ==========================================================================
+// Utility
+// ==========================================================================

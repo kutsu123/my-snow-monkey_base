@@ -1,0 +1,14 @@
+// ==========================================================================
+// Snow Monkey テーマのヘッダの上書き
+// ==========================================================================
+//ロゴ画像のサイズ変更
+@media (min-width: 64em){
+	.c-site-branding .custom-logo{
+		width: 260px !important;
+		height: auto !important;
+	}
+}
+//ヘッダ全体
+.l-header{
+	background-color: map-get($colors-map, accent-color1);
+}

@@ -1,2 +1,3 @@
-# my-snow-monkey_base
-my snow monkeyの雛形です（超ベータ版）
+# My Snow Monkey
+
+子テーマの `functions.php` にカスタマイズコードを追加するように、このプラグインの `my-snow-monkey.php` に書くと、同じようにカスタマイズが反映されます。

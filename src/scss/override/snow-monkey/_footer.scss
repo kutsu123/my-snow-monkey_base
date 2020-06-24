@@ -1,0 +1,16 @@
+// ==========================================================================
+// Snow Monkey テーマのフッターの上書き
+// ==========================================================================
+
+.l-footer{
+	margin-top: 2em;
+	background-color: #7c94a4;
+	color: #fff;
+}
+.l-footer a{
+	color: #fff;
+}
+.l-footer .c-widget__title::before,
+.l-footer .c-widget__title::after{
+	background: #fff;
+}
