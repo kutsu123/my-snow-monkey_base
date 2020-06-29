@@ -1,23 +1,30 @@
+//== Media Queries
+// https://www.nxworld.net/tips/sass-media-queries-mixin.html
 //
-// Mixins
+// .elements {
+//   /* @media screen and (min-width: 1024px) */
+//   @include mq(lg) {
+//   }
+// 
+//   /* @media screen and (max-width: 639px)  ※第3引数にtrueをつけると-1した数でmax値をだす */
+//   @include mq(sm, max, true) {
+//   }
+// 
+//   /* @media screen and (min-width: 768px) and (max-width: 1023px) */
+//   @include mq {
+//     @include mq(lg, max, true) {
+//     }
+//   }
+// }
+
 // --------------------------------------------------
 
-//== Media Queries
-@mixin mq($size, $width: max) {
-  $result: 0;
-  @if(type-of($size) == number) { 
-    $result: $size;
-  } @else {
-    @each $key, $value in $screen {
-      @if($key == $size) {
-        $result: $value;
-      }
-    }
+@mixin mq($breakpoint: md, $rule: min, $subtraction: false) {
+  $breakpoint: map_get($mq-breakpoints, $breakpoint);
+  @if $rule == max and $subtraction {
+    $breakpoint: $breakpoint - 1;
   }
-  @if($width == min) {
-    $result: $result + 1;
-  }
-  @media (#{$width}-width: #{px2em($result)}) {
+  @media screen and (#{$rule}-width: $breakpoint) {
     @content;
   }
 }
